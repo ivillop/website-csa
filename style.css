@@ -11,6 +11,10 @@
     --gradient-color: linear-gradient(90deg, rgba(142, 248, 255, 1), rgba(22, 31, 245, 0.5));
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -118,7 +122,7 @@ main article.benefit {
     margin-inline: 10rem;
     justify-content: space-between;
     align-items: center;
-    margin-top: 3rem;
+    padding-top: 3rem;
 }
 
 .benefit-list {
@@ -160,7 +164,7 @@ article.register a.register {
 }
 
 article.division {
-    margin-top: 3rem;
+    padding-top: 5rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -184,28 +188,66 @@ article.division {
     color: var(--blue-color);
 }
 
-article.faq {
-    margin-top: 3rem;
+.faq {
+    padding-top: 5rem;
     display: flex;
+    margin: 20px auto;
+    max-width: 800px;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 1rem;
-    font-size: 18px;
-}
-
-.faq-item {
-    border: 3px solid var(--blue-color);
+  }
+  
+  .faq-item {
+    margin-bottom: 10px;
     border-radius: 10px;
-    padding-inline: 1rem;
+    border: 3px solid var(--blue-color);
+  }
+  
+  .faq-button {
+    font-size: 18px;
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 70%;
     justify-content: space-between;
-}
-
-.faq-item i {
-    font-size: 22px;
+    align-items: center;
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    background-color: #fff;
+    color: var(--black-color);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .faq-button:hover {
+    background-color: var(--button-color);
+    color: var(--white-color);
+    transition: .3s;
+  }
+  
+  .faq-button p {
+    margin: 0;
+  }
+  
+  .faq-button i {
+    font-size: 20px;
+    transition: 0.3s;
     color: var(--blue-color);
-}
+  }
+  
+  .faq-content {
+    max-height: 0;
+    padding: 0 15px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .faq-item.active .faq-content {
+    max-height: 200px;
+    padding: 0 15px;
+  }
+  
+  .faq-item.active .faq-button i {
+    transform: rotate(45deg);
+  }
+  
